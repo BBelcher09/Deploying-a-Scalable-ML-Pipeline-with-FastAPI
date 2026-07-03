@@ -55,14 +55,16 @@ model = train_model(X_train, y_train)
 # save the model and the encoder
 model_path = "/home/blair/Deploying-a-Scalable-ML-Pipeline-with-FastAPI/model/model.pkl"
 save_model(model, model_path)
+print(f"Model saved to {model_path}")
 encoder_path = "/home/blair/Deploying-a-Scalable-ML-Pipeline-with-FastAPI/model/encoder.pkl" 
 save_model(encoder, encoder_path)
+print(f"Encoder saved to {encoder_path}")
 
 # load the model
 model = load_model(
     model_path
 ) 
-
+print(f"Model loaded from {model}")
 # TODO: use the inference function to run the model inferences on the test dataset.
 preds = inference(model, X_test)
 
